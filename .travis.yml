@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+  
+before_install:
+  - docker build -t pradeep7953/devops -f Dockefile .
+  
+script:
+  - docker run pradeep7953/devops npm run test -- --coverage
